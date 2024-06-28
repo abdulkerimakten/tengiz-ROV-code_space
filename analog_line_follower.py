@@ -3,6 +3,11 @@ import numpy as np
 
 def main():
     cap = cv2.VideoCapture(0)  # Kameradan görüntü almak için
+    cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M','J','P','G'))
+    cap.set(cv2.CAP_PROP_FPS, 15)
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+
     while cap.isOpened():
         ret, frame = cap.read()
         if not ret:
