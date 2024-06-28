@@ -42,7 +42,7 @@ def main():
                 else:
                     command = 'FORWARD'
                 
-                # Çizgiyi bulduğumuzu belirtmek için bir işaretçi çizelim
+                # Şeridin merkezini işaretlemek için bir çember çizelim
                 cv2.circle(frame, (cx, int(height/2) + cy), 10, (0, 255, 0), -1)
                 cv2.putText(frame, f"Error: {error}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
             else:
@@ -50,8 +50,8 @@ def main():
         else:
             command = 'STOP'
         
-        # Komutu görüntüde yazdır
-        cv2.putText(frame, f"Command: {command}", (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv2.LINE_AA)
+        # Komutu görüntüde yazdır (görüntü merkezinin biraz altına)
+        cv2.putText(frame, f"Command: {command}", (width//2 - 100, height//2 + 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv2.LINE_AA)
         
         # Görüntüyü göster
         cv2.imshow('Line Follower', frame)
