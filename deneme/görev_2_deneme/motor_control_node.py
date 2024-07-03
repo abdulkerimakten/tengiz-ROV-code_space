@@ -9,44 +9,9 @@ class MotorControlNode(Node):
 
     def command_callback(self, msg):
         command = msg.data
-        self.get_logger().info(f'Received command: {command}')
-        # Burada motor kontrol kodunu ekleyin
-        if command == 'MOVE_LEFT':
-            self.move_left()
-        elif command == 'MOVE_RIGHT':
-            self.move_right()
-        elif command == 'FORWARD':
-            self.move_forward()
-        elif command == 'TURN_LEFT':
-            self.turn_left()
-        elif command == 'TURN_RIGHT':
-            self.turn_right()
-        elif command == 'STOP':
-            self.stop()
-
-    def move_left(self):
-        self.get_logger().info('Moving Left')
-        # Motor hareket kodları buraya eklenecek
-
-    def move_right(self):
-        self.get_logger().info('Moving Right')
-        # Motor hareket kodları buraya eklenecek
-
-    def move_forward(self):
-        self.get_logger().info('Moving Forward')
-        # Motor hareket kodları buraya eklenecek
-
-    def turn_left(self):
-        self.get_logger().info('Turning Left')
-        # Motor hareket kodları buraya eklenecek
-
-    def turn_right(self):
-        self.get_logger().info('Turning Right')
-        # Motor hareket kodları buraya eklenecek
-
-    def stop(self):
-        self.get_logger().info('Stopping')
-        # Motor durdurma kodları buraya eklenecek
+        self.get_logger().info(f'Motor command received: {command}')
+        # Here, add code to interface with the motor controllers
+        # For example, sending PWM signals or commands to an ESC
 
 def main(args=None):
     rclpy.init(args=args)

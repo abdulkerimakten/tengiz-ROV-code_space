@@ -1,4 +1,6 @@
 from setuptools import setup
+import os
+from glob import glob
 
 package_name = 'line_follower_package'
 
@@ -6,6 +8,9 @@ setup(
     name=package_name,
     version='0.0.0',
     packages=[package_name],
+    data_files=[
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
+    ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='your_name',
